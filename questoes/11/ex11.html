@@ -1,0 +1,80 @@
+<doctype html>
+<html lang="pt-br">
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Questão 11</title>
+		<link href="estilo.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="menu">
+			<ul>
+			    <li><a href="..\..\principal.html"> Principal </a></li>
+			    <li><a href="..\01\ex1.html">|Questão 01|</a></li>
+			    <li><a href="..\02\ex2.html">|Questão 02|</a></li>
+			    <li><a href="..\03\ex3.html">|Questão 03|</a></li>
+			    <li><a href="..\04\ex4.html">|Questão 04|</a></li>
+			    <li><a href="..\05\ex5.html">|Questão 05|</a></li>
+			    <li><a href="..\06\ex6.html">|Questão 06|</a></li>
+			    <li><a href="..\07\ex7.html">|Questão 07~08|</a></li>
+			    <li><a href="..\09\ex9.html">|Questão 09|</a></li>
+			    <li><a href="..\10\ex10.html">|Questão 10|</a></li>
+			    <li><a href="ex11" id="pagina-selecionada">|Questão 11|</a></li>
+			</ul>
+		</div>
+			
+		<div id="informacoes">
+			<h1>Questão 11</h1>
+			<h2>Faça um Programa que apresente o quadrado de cada um dos números pares entre 1 a
+				100.</h2>
+
+				<table border="1" id="tabela">
+					<tr>
+						<td>Número Par</td>
+						<td>Seu Quadrado</td>	
+					</tr><br>
+				</table>
+
+
+				<input type="button" id="botao" value="Mostrar" onclick="mostrar()">
+				<div id="res"></div>
+				<script>
+					var contador = 1
+					var indice = 0
+
+					function mostrar(){
+						while(contador <= 100){
+							if (contador%2==0) {
+								tabela.innerHTML += `
+								<tr>
+									<td>${contador}</td>
+									<td>${contador*contador}</td>
+								</tr>`
+							}
+							contador++
+						}
+						
+						window.document.getElementById('botao').value='Esconder'
+						contador++
+						
+						if (contador == 103) {
+							tabela.innerHTML=`
+							<tr>
+								<td>Número Par</td>
+								<td>Seu Quadrado</td>	
+							</tr>`
+							contador = 1
+							window.document.getElementById('botao').value='Mostar'
+						}
+					}
+				</script>
+
+
+
+
+
+			<h2>PRATICA DE PROGRAMACAO EM SISTEMAS WEB</h2>
+		</div>
+	</body>
+</html>

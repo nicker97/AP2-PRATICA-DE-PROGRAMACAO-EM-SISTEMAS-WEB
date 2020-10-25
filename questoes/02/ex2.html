@@ -1,0 +1,57 @@
+<doctype html>
+<html lang="pt-br">
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Questão 02</title>
+		<link href="estilo.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="menu">
+			<ul>
+			    <li><a href="..\..\principal.html"> Principal </a></li>
+			    <li><a href="..\01\ex1.html">|Questão 01|</a></li>
+			    <li><a href="ex2.html" id="pagina-selecionada">|Questão 02|</a></li>
+			    <li><a href="..\03\ex3.html">|Questão 03|</a></li>
+			    <li><a href="..\04\ex4.html">|Questão 04|</a></li>
+			    <li><a href="..\05\ex5.html">|Questão 05|</a></li>
+			    <li><a href="..\06\ex6.html">|Questão 06|</a></li>
+			    <li><a href="..\07\ex7.html">|Questão 07~08|</a></li>
+			    <li><a href="..\09\ex9.html">|Questão 09|</a></li>
+			    <li><a href="..\10\ex10.html">|Questão 10|</a></li>
+			    <li><a href="..\11\ex11.html">|Questão 11|</a></li>
+			</ul>
+		</div>
+			
+		<div id="informacoes">
+			<h1>Questão 02</h1>
+			<h2>Faça um programa que entre com o nome e o salário de um funcionário e mostre seu
+				novo salário, sabendo que o mesmo teve um aumento de 10%. </h2>
+			
+			<input type="text" id='nome'placeholder="Digite seu nome"><br>
+			<input type="number" id="salario" placeholder="Digite seu salário">
+			<p class="enviar">
+				<input type="submit" id="enviar" value="Calcular" onclick="calcular()">
+			</p>
+			<div id="res"></div>
+			<script>
+				function calcular(){
+					var nome = window.document.getElementById('nome').value
+					var salario = Number(window.document.getElementById('salario').value)
+					const regex = /[0-9]/
+
+					if (nome=='' || salario=='' || regex.test(nome) == true) {
+						window.alert('Os valores não foram digitados ou estão errados VERIFIQUE!')
+					
+					}else{			
+						var aumento = (salario*0.10)+salario
+						res.innerHTML = `<p>Olá ${nome}, seu salário com o aumento de 10%, ficou ${aumento.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+					}
+				}
+			</script>
+
+			<h2>PRATICA DE PROGRAMACAO EM SISTEMAS WEB</h2>
+		</div>
+	</body>
+</html>

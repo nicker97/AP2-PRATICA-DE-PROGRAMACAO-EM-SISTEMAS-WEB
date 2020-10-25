@@ -1,0 +1,72 @@
+<doctype html>
+<html lang="pt-br">
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Questão 04</title>
+		<link href="estilo.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="menu">
+			<ul>
+			    <li><a href="..\..\principal.html"> Principal </a></li>
+			    <li><a href="..\01\ex1.html">|Questão 01|</a></li>
+			    <li><a href="..\02\ex2.html">|Questão 02|</a></li>
+			    <li><a href="..\03\ex3.html">|Questão 03|</a></li>
+			    <li><a href="04\ex4.html" id="pagina-selecionada">|Questão 04|</a></li>
+			    <li><a href="..\05\ex5.html">|Questão 05|</a></li>
+			    <li><a href="..\06\ex6.html">|Questão 06|</a></li>
+			    <li><a href="..\07\ex7.html">|Questão 07~08|</a></li>
+			    <li><a href="..\09\ex9.html">|Questão 09|</a></li>
+			    <li><a href="..\10\ex10.html">|Questão 10|</a></li>
+			    <li><a href="..\11\ex11.html">|Questão 11|</a></li>
+
+			</ul>
+		</div>
+			
+		<div id="informacoes">
+			<h1>Questão 04</h1>
+			<h2>A partir do preço à vista de um determinado produto, calcule o preço total a pagar e o
+				valor da prestação mensal, referentes ao pagamento parcelado. Se o pagamento for
+				parcelado em 3 vezes deve ser dado um acréscimo de 10% no total a ser pago. Se o
+				parcelamento for em 5 vezes, o acréscimo será de 20%. </h2>
+			
+				<input type="number" id="preco" placeholder="Digite o preço à vista do produto">
+				<form>
+					<select id="vezes">
+					<option value="tres">3x - acrécimo de 10%
+					<option value="cinco">5x - acrécimo de 20%
+					</select>
+				</form>
+				<div class="enviar">
+					<input type="button" id="parcelar" value="Parcelar" onclick="calcular()">
+				</div>
+				<div id="res"></div>
+				
+				<script>
+					function calcular(){
+						var preco = Number(window.document.getElementById('preco').value)
+						var vezes = window.document.getElementById('vezes').value
+						
+						if (preco=='') {
+						window.alert('Os valores não foram digitados ou estão errados VERIFIQUE!')
+					
+						}else{
+							if(vezes == 'tres'){
+								var precototal = preco+(preco*0.1)
+								var prestacao = precototal/3
+								res.innerHTML = `<p>O valor total a pagar será de ${precototal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}, com 3x parcelas de ${prestacao.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.</p>`
+							}
+							else{
+								var precototal = preco+(preco*0.2)
+								var prestacao = precototal/5
+								res.innerHTML = `<p>O valor total a pagar será de ${precototal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}, com 5x parcelas de ${prestacao.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.</p>`
+							}
+						}	
+					}
+				</script>
+				<h2>PRATICA DE PROGRAMACAO EM SISTEMAS WEB</h2>
+		</div>
+	</body>
+</html>

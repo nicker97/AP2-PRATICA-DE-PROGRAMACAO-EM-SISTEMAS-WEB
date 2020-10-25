@@ -1,0 +1,73 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: rgb(176, 204, 232);
+	font-family: serif, sans-serif;
+}
+
+.menu ul {
+	background-color: rgb(237, 246, 255);
+	list-style: none;
+	text-align: center;
+	padding: 0;
+	margin: 0;    
+}
+
+.menu li {
+	display: inline-block;
+	font-size:20px;
+}
+
+.menu a {
+	text-decoration: none;
+	color: rgb(123, 102, 207);
+	width: 100px;
+	display: block;
+	padding: 15px;
+}
+
+#pagina-selecionada{
+	color: rgb(254, 200, 116);
+	font-size: 25px;
+}
+
+li a:hover {
+	color: rgb(254, 200, 116);
+	border-color: #000;
+}
+
+h1{
+	color: rgb(123, 102, 207); 
+}
+		
+h2{
+	font-size: 19px;
+	color: rgb(255, 255, 255);
+}
+
+
+#imagem, #informacoes{
+	text-align: center;
+}
+.enviar input{
+	background:rgb(123, 102, 207); 
+	height: 50px;
+	width: 150px;
+	font-family: serif;
+	font-size: 20px;
+	border-radius: 5px;
+	text-align: top;
+	border: 0;
+	color: #fff;
+	cursor: pointer;
+}
+.enviar input:hover{
+	background: rgb(100, 80, 180);
+}
+
+input{
+	width: 1000px;
+	padding: 10px;
+	margin-top: 40px;
+	width: 500px;
+}

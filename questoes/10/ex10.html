@@ -1,0 +1,136 @@
+<doctype html>
+<html lang="pt-br">
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Questão 10</title>
+		<link href="estilo.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="menu">
+			<ul>
+			    <li><a href="..\..\principal.html"> Principal </a></li>
+			    <li><a href="..\01\ex1.html">|Questão 01|</a></li>
+			    <li><a href="..\02\ex2.html">|Questão 02|</a></li>
+			    <li><a href="..\03\ex3.html">|Questão 03|</a></li>
+			    <li><a href="..\04\ex4.html">|Questão 04|</a></li>
+			    <li><a href="..\05\ex5.html">|Questão 05|</a></li>
+			    <li><a href="..\06\ex6.html">|Questão 06|</a></li>
+			    <li><a href="..\07\ex7.html">|Questão 07~08|</a></li>
+			    <li><a href="..\09\ex9.html">|Questão 09|</a></li>
+			    <li><a href="ex10.html" id="pagina-selecionada">|Questão 10|</a></li>
+			    <li><a href="..\11\ex11.html">|Questão 11|</a></li>
+
+			</ul>
+		</div>
+			
+		<div id="informacoes">
+			<h1>Questão 10</h1>
+			<h2>Faça um programa, utilizando as estruturas de repetição, onde o programa deverá
+				finalizar quando o usuário digitar 0, caso contrário ficará cadastrando os pedidos,
+				agora vai poder acumular mais de um produto e ao final deverá ser dada a soma dos
+				pedidos.
+				O cardápio de uma casa de lanches é dado pela tabela abaixo: </h2>
+			
+			<table border="1" id="tabela">
+				<tr>
+					<td>Código</td>
+					<td>Produto</td>	
+					<td>Preço Unitário (R$)</td>
+				</tr><br>
+			</table>
+
+			<h2>Escreva um programa que leia o código do item adquirido pelo consumidor e a
+				quantidade, calculando e mostrando o valor a pagar. Não será necessário exibir o
+				produto e o valor, somente o valor final. </h2>
+
+			<input type="number" id="codigoProduto" placeholder="Digite o Código do Produto">
+			<input type="number" id="quantidade" placeholder="Digite a Quantidade"><br>
+			<input type="button" id="anotar" value="Anotar" onclick="anotar()">
+			<input type="button" id="finalizar" value="Finalizar" onclick="finalizar()">
+			<div id="res"></div>
+			<table border="1" id="seuPedido">
+				
+			</table>
+
+			<script>
+				var codigo = [100, 101, 102, 103, 104, 105]
+				var produto = ['Cachorro Quente', 'Bauru Simples', 'Bauru com ovo', 'Hamburger', 'Cheeseburger', 'Refrigerante']
+				var preco = [1.70, 2.30, 2.60, 2.40, 2.50, 1.00]
+				var pedido = []
+				var contador = indice = indice1 = 0
+				var valorTotal = 0
+
+				while (contador < codigo.length) {
+					tabela.innerHTML += `<tr>
+						<td>${codigo[contador]}</td>
+						<td>${produto[contador]}</td>	
+						<td>${preco[contador].toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</td>
+					</tr>`	
+					contador++
+				}
+				function anotar(){
+					var codigoDigitado = Number(window.document.getElementById(`codigoProduto`).value)
+					var quantidade = Number(window.document.getElementById(`quantidade`).value)
+					if (codigoDigitado=='' || quantidade==''|| Number.isInteger(quantidade)==false|| Number.isInteger(codigoDigitado)==false || codigoDigitado<100 || codigoDigitado>105 ) {
+						window.alert('Os valores não foram digitados ou estão errados VERIFIQUE!')
+					
+					}else{
+						while (indice < codigo.length) {
+							if (codigoDigitado == codigo[indice]) {
+								pedido.push(quantidade, produto[indice], preco[indice]*quantidade )
+							}
+							indice++
+						}
+						window.document.getElementById(`codigoProduto`).value = ''
+						window.document.getElementById(`quantidade`).value = ''		
+						indice = 0
+						res.innerHTML = `<p>O item foi adicionado a COMANDA!</p>`		
+					}
+				}
+
+				function finalizar() {
+							seuPedido.innerHTML = `
+							<tr>
+								<td></td>
+								<td>SEU PEDIDO</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Quantidade</td>
+								<td>Produto</td>	
+								<td>Preço(R$)</td>
+							</tr>`
+							while(indice1 < pedido.length) {
+								seuPedido.innerHTML += `
+									<tr>
+										<td>${pedido[indice1]}</td>
+										<td>${pedido[indice1+1]}</td>	
+										<td>${pedido[indice1+2].toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</td>
+									</tr>
+									`
+								valorTotal += (pedido[indice1+2])
+								indice1 += 3
+							}
+							seuPedido.innerHTML += `
+								<tr>
+									<td>-</td>
+									<td>-</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>Total a Pagar</td>
+									<td>${valorTotal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</td>
+								</tr>`
+							indice1 = 0
+							valorTotal =0
+						}
+					
+								
+			</script>
+			<h2>PRATICA DE PROGRAMACAO EM SISTEMAS WEB</h2>
+		</div>
+	</body>
+</html>

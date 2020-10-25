@@ -1,0 +1,68 @@
+<doctype html>
+<html lang="pt-br">
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Questão 05</title>
+		<link href="estilo.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="menu">
+			<ul>
+			    <li><a href="..\..\principal.html"> Principal </a></li>
+			    <li><a href="..\01\ex1.html">|Questão 01|</a></li>
+			    <li><a href="..\02\ex2.html">|Questão 02|</a></li>
+			    <li><a href="..\03\ex3.html">|Questão 03|</a></li>
+			    <li><a href="..\04\ex4.html">|Questão 04|</a></li>
+			    <li><a href="ex5.html" id="pagina-selecionada">|Questão 05|</a></li>
+			    <li><a href="..\06\ex6.html">|Questão 06|</a></li>
+			    <li><a href="..\07\ex7.html">|Questão 07~08|</a></li>
+			    <li><a href="..\09\ex9.html">|Questão 09|</a></li>
+			    <li><a href="..\10\ex10.html">|Questão 10|</a></li>
+			    <li><a href="..\11\ex11.html">|Questão 11|</a></li>
+
+			</ul>
+		</div>
+			
+		<div id="informacoes">
+			<h1>Questão 05</h1>
+			<h2>Faça um programa que leia o nome e as três notas de uma disciplina de um aluno e ao
+			final escreva o nome do aluno, sua média e se ele foi aprovado, sabendo-se que a
+			média para aprovação é igual ou superior a 8.</h2>
+
+			<input type="text" id="nome" placeholder="Digite o nome do aluno"><br><br>
+			<input type="number" id="nota1" placeholder="Digite a primeira nota"><br>
+			<input type="number" id="nota2" placeholder="Digite a segunda nota"><br>
+			<input type="number" id="nota3" placeholder="Digite a terceira nota"><br>
+			<div class="enviar">
+				<input type="button" id="enviar" value="Calcular" onclick="calcular()">
+			</div>
+			<div id="res"></div>
+			<script>
+				function calcular(){
+					var nome = window.document.getElementById('nome').value
+					var n1 = Number(window.document.getElementById('nota1').value)
+					var n2 = Number(window.document.getElementById('nota2').value)
+					var n3 = Number(window.document.getElementById('nota3').value)
+					var media = (n1+n2+n3)/3
+					const regex = /[0-9]/
+
+					if (n1==''||n2==''||n3==''||nome==''||regex.test(nome) == true) {
+						window.alert('Os valores não foram digitados ou estão errados VERIFIQUE!')
+					
+					}else{
+						if(media >=8){
+							res.innerHTML = `Parabéns ${nome}, você esta APROVADO com a média ${media}.`
+						}
+						else{
+							res.innerHTML = `Olá ${nome}, você ficou com média ${media.toFixed(1)}, e não atingiu a média de aprovação.`
+						}
+					}
+				}
+			</script>
+
+			<h2>PRATICA DE PROGRAMACAO EM SISTEMAS WEB</h2>
+		</div>
+	</body>
+</html>

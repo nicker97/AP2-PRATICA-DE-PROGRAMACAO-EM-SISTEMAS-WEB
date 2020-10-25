@@ -1,0 +1,74 @@
+<doctype html>
+<html lang="pt-br">
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Questão 06</title>
+		<link href="estilo.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="menu">
+			<ul>
+			    <li><a href="..\..\principal.html"> Principal </a></li>
+			    <li><a href="..\01\ex1.html">|Questão 01|</a></li>
+			    <li><a href="..\02\ex2.html">|Questão 02|</a></li>
+			    <li><a href="..\03\ex3.html">|Questão 03|</a></li>
+			    <li><a href="..\04\ex4.html">|Questão 04|</a></li>
+			    <li><a href="..\05\ex5.html">|Questão 05|</a></li>
+			    <li><a href="ex6.html" id="pagina-selecionada">|Questão 06|</a></li>
+			    <li><a href="..\07\ex7.html">|Questão 07~08|</a></li>
+			    <li><a href="..\09\ex9.html">|Questão 09|</a></li>
+			    <li><a href="..\10\ex10.html">|Questão 10|</a></li>
+			    <li><a href="..\11\ex11.html">|Questão 11|</a></li>
+
+			</ul>
+		</div>
+			
+		<div id="informacoes">
+			<h1>Questão 06</h1>
+			<h2>Escreva um programa que receba dois números reais e um código de seleção do
+				usuário. Se o código digitado for 1, faça o programa adicionar os dois números
+				previamente digitados e mostrar o resultado; se o código de seleção for 2, os números
+				deverão ser multiplicados; se o código de seleção for 3, o primeiro número deve ser
+				dividido pelo segundo.</h2>
+
+			<input type="number" id="num1" placeholder="Digite o primeiro número"><br>
+			<input type="number" id="num2" placeholder="Digite o segundo número">
+			<form>
+				<select id="opcoes">
+				<option value="01">01 - Somar
+				<option value="02">02 - Multiplicar
+				<option value="03">03 - Dividir
+				</select>
+			</form>
+			<div class="enviar">
+				<input type="button" id="enviar" value="Calcular" onclick="calcular()">
+			</div>
+			<div id="res"></div>
+			<script>
+				function calcular(){
+					var n1 = Number(window.document.getElementById('num1').value)
+					var n2 = Number(window.document.getElementById('num2').value)
+					var resultado = 0
+					if (n1=='' || n2=='' || Number.isInteger(n1)==false || Number.isInteger(n2)==false) {
+						window.alert('Os valores não foram digitados ou estão errados VERIFIQUE!')
+					
+					}else{
+						if(opcoes.value == 01){
+							var resultado = n1+n2
+						}
+						else if(opcoes.value == 02){
+							var resultado = n1*n2
+						}
+						else if(opcoes.value == 03){
+							var resultado = n1/n2
+						}
+						res.innerHTML = `<p>Você escolheu a opção ${opcoes.value}, o resultado do calculo é ${resultado.toFixed(1)}.</p>`
+					}
+				}
+			</script>
+			<h2>PRATICA DE PROGRAMACAO EM SISTEMAS WEB</h2>
+		</div>
+	</body>
+</html>

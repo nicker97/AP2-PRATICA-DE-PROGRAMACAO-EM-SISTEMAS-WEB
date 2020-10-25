@@ -1,0 +1,66 @@
+<doctype html>
+<html lang="pt-br">
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Questão 03</title>
+		<link href="estilo.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="menu">
+			<ul>
+			    <li><a href="..\..\principal.html"> Principal </a></li>
+			    <li><a href="..\01\ex1.html">|Questão 01|</a></li>
+			    <li><a href="..\02\ex2.html">|Questão 02|</a></li>
+			    <li><a href="ex3.html" id="pagina-selecionada">|Questão 03|</a></li>
+			    <li><a href="..\04\ex4.html">|Questão 04|</a></li>
+			    <li><a href="..\05\ex5.html">|Questão 05|</a></li>
+			    <li><a href="..\06\ex6.html">|Questão 06|</a></li>
+			    <li><a href="..\07\ex7.html">|Questão 07~08|</a></li>
+			    <li><a href="..\09\ex9.html">|Questão 09|</a></li>
+			    <li><a href="..\10\ex10.html">|Questão 10|</a></li>
+			    <li><a href="..\11\ex11.html">|Questão 11|</a></li>
+
+			</ul>
+		</div>
+			
+		<div id="informacoes">
+			<h1>Questão 03</h1>
+			<h2>Faça um programa que leia dois valores inteiros A e B se os valores forem iguais
+				devem ser somado os dois, caso contrário multiplique A por B ao final do cálculo ao
+				final do cálculo atribuir o valor para uma variável C. 
+			</h2><br>
+			<input type="number" id="valorA" placeholder="Digite o primeiro valor"><br>
+			<input type="numver" id="valorB" placeholder="Digite o segundo valor">
+			<div class="enviar">
+				<input type="button" id="calcular" value="Calcular" onclick="calcular()">
+			</div>
+			<div id="res"></div>
+			<script>
+				function calcular(){
+					var valorA = Number(window.document.getElementById('valorA').value)
+					var valorB = Number(window.document.getElementById('valorB').value)
+					
+					if (valorA=='' || valorB=='' || Number.isInteger(valorA)==false || Number.isInteger(valorB)==false) {
+						window.alert('Os valores não foram digitados ou estão errados VERIFIQUE!')
+					
+					}else{	
+						if(valorA == valorB){
+						res.innerHTML = `<p>A soma dos valores resultou em ${valorA+valorB}.</p>`
+						}
+						else{
+							var valorC = valorA * valorB
+							res.innerHTML = `<p>O resultado da multiplicação dos valores ${valorA}x${valorB} resultou em ${valorC.toFixed(2)}.</p>`
+					}
+				}
+			}
+
+			</script>
+
+
+
+			<h2>PRATICA DE PROGRAMACAO EM SISTEMAS WEB</h2>
+		</div>
+	</body>
+</html>
